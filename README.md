@@ -47,7 +47,7 @@ Some repo's may have more specific instructions however, please check the README
 ## Start the system
 
 1. navigate to `vidi-concorda-nodezoo-system`
-2. run `fuge shell fuge/system.yml`
+2. run `fuge shell system.yml`
 
 ___Note:___ You can run infrastructure and services separately using `infrastructure.yml` or `services.yml` over `system.yml`. All three files are also compatible with `docker-compose` should you wish to run without fuge.
 

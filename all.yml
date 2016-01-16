@@ -2,7 +2,7 @@ redis:
   image: redis
   ports:
     - 6379:6379
-    
+
 elasticsearch:
   image: elasticsearch
   command:
@@ -26,37 +26,37 @@ beanstalkd:
   ports:
     - 11300:11300
 base:
-  build: ../../nodezoo/
+  build: ../nodezoo/
   container_name: mesh
 
 msgstats:
-  build: ../../nodezoo/
+  build: ../nodezoo/
   container_name: msgstats
 
 github:
-  build: ../../nodezoo-github/
+  build: ../nodezoo-github/
   container_name: github
 
 info:
-  build: ../../nodezoo-info/
+  build: ../nodezoo-info/
   container_name: info
 
 npm:
-  build: ../../nodezoo-npm/
+  build: ../nodezoo-npm/
   container_name: npm
 
 search:
-  build: ../../nodezoo-search/
+  build: ../nodezoo-search/
   container_name: search
 
 web:
-  build: ../../nodezoo-web/
+  build: ../nodezoo-web/
   container_name: web
 
 concorda:
-  build: ../../concorda/
+  build: ../concorda/
   container_name: concorda
 
 vidi:
-  build: ../../vidi-dashboard/
+  build: ../vidi-dashboard/
   container_name: vidi
