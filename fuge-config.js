@@ -3,7 +3,7 @@
 module.exports = {
   proxy: 'docker',
   runDocker: true,
-  tail: true,
+  tail: false,
   restartOnError: true,
   exclude: [
     '**/node_modules',
