@@ -2,7 +2,7 @@
 
 module.exports = {
   proxy: 'docker',
-  runDocker: false,
+  runDocker: true,
   tail: true,
   restartOnError: true,
   exclude: [
