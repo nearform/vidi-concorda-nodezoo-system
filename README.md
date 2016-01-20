@@ -8,7 +8,22 @@ To make use of this repo you need to have fuge installed, you can do this via np
 npm install -g fuge
 ```
 
-## Get the repos
+## Install Docker
+You need the ability to run docker and for it to be active in your session to run this system. Please see Docker's [instructions][docker] for more detail on how to install it for your system. To test if docker is available for fuge to make use of, type the following into your terminal,
+
+```
+docker ps -a
+```
+
+If this command doesn't return a TLS connection issue you are good to go otherwise the following command should connect Docker to your session,
+
+```
+eval $(docker-machine env default) // your machine name may not be default use docker-machine ls to confirm
+```
+
+Try the docker command above again, you should now see some form of output and not the original TLS error.
+
+## Install the system
 Each dependent repo must be cloned into the same root directory. Your complete system should look like this,
 
 ```
@@ -24,6 +39,7 @@ Each dependent repo must be cloned into the same root directory. Your complete s
 --/vidi-dashboard
 ```
 
+### Get the repos
 The links for each required repo are listed below,
 
 - [Nodezoo][]
@@ -35,14 +51,18 @@ The links for each required repo are listed below,
 - [Concorda][]
 - [Vidi][]
 
-For each repo, follow it's setup instructions in it's README. These usually amount to running the following commands in each folder,
+### Set your branches
+While we are working on cleaning these repos up we have had set up some temporary branches for certain repos, before you start please ensure each repo is on the correct branch listed below. As soon as our improvements are in place we will move back to all repos working via the `live` branch as this is where the production version of the system will live going forward.
 
-```
-npm install
-npm build
-```
+- Nodezoo - `live`
+- Nodezoo web `to-redux`
+- Nodezoo info - `live`
+- Nodezoo search - `live`
+- Nodezoo github - `live`
+- Nodezoo npm - `live`
+- Concorda - `master`
+- Vidi - `master`
 
-Some repo's may have more specific instructions however, please check the README.
 
 ## Start the system
 
@@ -59,3 +79,5 @@ ___Note:___ You can run infrastructure and services separately using `infrastruc
 [Nodezoo npm]: https://github.com/rjrodger/nodezoo-npm
 [Concorda]: https://github.com/nearform/concorda
 [Vidi]: https://github.com/nearform/vidi-dashboard
+
+[docker]: ./
