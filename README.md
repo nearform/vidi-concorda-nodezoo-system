@@ -14,13 +14,24 @@ You need the ability to run docker and for it to be active in your session to ru
 ```
 docker ps -a
 ```
+<<<<<<< HEAD
+=======
+If you are prompted with an error saying cannot connect to docker daemon, run the following command:
+
+```
+docker-machine start default
+```
+>>>>>>> Added extra instructions to read
 
 If this command doesn't return a TLS connection issue you are good to go otherwise the following command should connect Docker to your session,
 
 ```
 eval $(docker-machine env default) // your machine name may not be default use docker-machine ls to confirm
 ```
+<<<<<<< HEAD
 
+=======
+>>>>>>> Added extra instructions to read
 Try the docker command above again, you should now see some form of output and not the original TLS error.
 
 ## Install the system
@@ -53,6 +64,7 @@ The links for each required repo are listed below,
 
 ### Set your branches
 While we are working on cleaning these repos up we have had set up some temporary branches for certain repos, before you start please ensure each repo is on the correct branch listed below. As soon as our improvements are in place we will move back to all repos working via the `live` branch as this is where the production version of the system will live going forward.
+<<<<<<< HEAD
 
 - Nodezoo - `live`
 - Nodezoo web `to-redux`
@@ -63,6 +75,35 @@ While we are working on cleaning these repos up we have had set up some temporar
 - Concorda - `master`
 - Vidi - `master`
 
+=======
+
+- Nodezoo - `live`
+- Nodezoo web `to-redux`
+- Nodezoo info - `live`
+- Nodezoo search - `live`
+- Nodezoo github - `live`
+- Nodezoo npm - `live`
+- Concorda - `master`
+- Vidi - `master`
+
+## Install your dependencies
+In the root folder run the following command:
+```
+for d in ./*/; do (cd "$d" && npm install); done
+```
+This will install most dependencies needed. Then go into the folder nodezoo/system and run:
+```
+npm install
+```
+This will the final dependencies.
+
+## Run build
+
+In the root folder run the following command:
+```
+for d in ./*/; do (cd "$d" && npm run build); done
+```
+>>>>>>> Added extra instructions to read
 
 ## Start the system
 
