@@ -27,7 +27,8 @@ eval $(docker-machine env default) // your machine name may not be default use d
 ```
 Try the docker command above again, you should now see some form of output and not the original TLS error.
 
-If you need to stop and/or remove docker images, the commands are as follows
+Running this system causes containers to be created and ran via docker.
+If you need to stop and/or remove docker containers, the commands are as follows
 ```
 docker stop $(docker ps -a)
 docker rm $(docker ps -a)
@@ -61,7 +62,7 @@ The links for each required repo are listed below,
 - [Concorda][]
 - [Vidi][]
 
-To clone from a users repo the command takes the following structure:
+If you have git available at the command line you can clone each repo using commands in the form,
 ```
 git clone https://github.com/[USERNAME]/[REPONAME]
 ```
@@ -87,30 +88,27 @@ While we are working on cleaning these repos up we have had set up some temporar
 - Vidi - `master`
 
 ## Install your dependencies
-In the root folder run the following command:
-```
-for d in ./*/; do (cd "$d" && npm install); done
-```
-This will install most dependencies needed. Then go into the folder nodezoo/system and run:
+In each repository's folder run the following command:
 ```
 npm install
 ```
-This will the final dependencies.
+Then go into the folder nodezoo/system and run:
+```
+npm install
+```
+This will install the dependencies.
 
 ## Run build
 
-In the root folder run the following command:
+In the folders concorda, vidi-dashboard, and nodezoo-web use the following command in each:
 ```
-for d in ./*/; do (cd "$d" && npm run build); done
+npm run build
 ```
 
 ## Start the system
 
 1. navigate to `vidi-concorda-nodezoo-system`
 2. run `fuge shell system.yml`
-3. Open in your web browser localhost:8000 & localhost:3000
-4. The login for vidi is USER:admin@vidi.com PASSWORD:vidi
-5. If the vidi dashboard doesn't update refresh the page.
 
 ___Note:___ You can run infrastructure and services separately using `infrastructure.yml` or `services.yml` over `system.yml`. All three files are also compatible with `docker-compose` should you wish to run without fuge.
 
