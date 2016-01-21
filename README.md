@@ -14,14 +14,25 @@ You need the ability to run docker and for it to be active in your session to ru
 ```
 docker ps -a
 ```
+If you are prompted with an error saying cannot connect to docker daemon, run the following command:
+
+```
+docker-machine start default
+```
 
 If this command doesn't return a TLS connection issue you are good to go otherwise the following command should connect Docker to your session,
 
 ```
 eval $(docker-machine env default) // your machine name may not be default use docker-machine ls to confirm
 ```
-
 Try the docker command above again, you should now see some form of output and not the original TLS error.
+
+Running this system causes containers to be created and ran via docker.
+If you need to stop and/or remove docker containers, the commands are as follows
+```
+docker stop $(docker ps -a)
+docker rm $(docker ps -a)
+```
 
 ## Install the system
 Each dependent repo must be cloned into the same root directory. Your complete system should look like this,
@@ -51,6 +62,19 @@ The links for each required repo are listed below,
 - [Concorda][]
 - [Vidi][]
 
+If you have git available at the command line you can clone each repo using commands in the form,
+```
+git clone https://github.com/[USERNAME]/[REPONAME]
+```
+For example to clone nodezoo from rjrodger:
+```
+git clone https://github.com/rjrodger/nodezoo
+```
+or concorda from nearform:
+```
+git clone https://github.com/nearform/concorda
+```
+
 ### Set your branches
 While we are working on cleaning these repos up we have had set up some temporary branches for certain repos, before you start please ensure each repo is on the correct branch listed below. As soon as our improvements are in place we will move back to all repos working via the `live` branch as this is where the production version of the system will live going forward.
 
@@ -63,6 +87,23 @@ While we are working on cleaning these repos up we have had set up some temporar
 - Concorda - `master`
 - Vidi - `master`
 
+## Install your dependencies
+In each repository's folder run the following command:
+```
+npm install
+```
+Then go into the folder nodezoo/system and run:
+```
+npm install
+```
+This will install the dependencies.
+
+## Run build
+
+In the folders concorda, vidi-dashboard, and nodezoo-web use the following command in each:
+```
+npm run build
+```
 
 ## Start the system
 
