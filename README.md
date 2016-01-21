@@ -25,8 +25,13 @@ If this command doesn't return a TLS connection issue you are good to go otherwi
 ```
 eval $(docker-machine env default) // your machine name may not be default use docker-machine ls to confirm
 ```
-
 Try the docker command above again, you should now see some form of output and not the original TLS error.
+
+If you need to stop and/or remove docker images, the commands are as follows
+```
+docker stop $(docker ps -a)
+docker rm $(docker ps -a)
+```
 
 ## Install the system
 Each dependent repo must be cloned into the same root directory. Your complete system should look like this,
@@ -56,9 +61,21 @@ The links for each required repo are listed below,
 - [Concorda][]
 - [Vidi][]
 
+To clone from a users repo the command takes the following structure:
+```
+git clone https://github.com/[USERNAME]/[REPONAME]
+```
+For example to clone nodezoo from rjrodger:
+```
+git clone https://github.com/rjrodger/nodezoo
+```
+or concorda from nearform:
+```
+git clone https://github.com/nearform/concorda
+```
+
 ### Set your branches
 While we are working on cleaning these repos up we have had set up some temporary branches for certain repos, before you start please ensure each repo is on the correct branch listed below. As soon as our improvements are in place we will move back to all repos working via the `live` branch as this is where the production version of the system will live going forward.
-
 
 - Nodezoo - `live`
 - Nodezoo web `to-redux`
@@ -91,6 +108,9 @@ for d in ./*/; do (cd "$d" && npm run build); done
 
 1. navigate to `vidi-concorda-nodezoo-system`
 2. run `fuge shell system.yml`
+3. Open in your web browser localhost:8000 & localhost:3000
+4. The login for vidi is USER:admin@vidi.com PASSWORD:vidi
+5. If the vidi dashboard doesn't update refresh the page.
 
 ___Note:___ You can run infrastructure and services separately using `infrastructure.yml` or `services.yml` over `system.yml`. All three files are also compatible with `docker-compose` should you wish to run without fuge.
 
