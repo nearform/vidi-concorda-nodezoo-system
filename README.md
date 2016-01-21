@@ -19,14 +19,12 @@ If you are prompted with an error saying cannot connect to docker daemon, run th
 ```
 docker-machine start default
 ```
->>>>>>> Added extra instructions to read
 
 If this command doesn't return a TLS connection issue you are good to go otherwise the following command should connect Docker to your session,
 
 ```
 eval $(docker-machine env default) // your machine name may not be default use docker-machine ls to confirm
 ```
->>>>>>> Added extra instructions to read
 
 Try the docker command above again, you should now see some form of output and not the original TLS error.
 
@@ -88,7 +86,6 @@ In the root folder run the following command:
 ```
 for d in ./*/; do (cd "$d" && npm run build); done
 ```
->>>>>>> Added extra instructions to read
 
 ## Start the system
 
