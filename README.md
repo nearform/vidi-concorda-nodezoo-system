@@ -60,7 +60,7 @@ The links for each required repo are listed below,
 - [Nodezoo github][]
 - [Nodezoo npm][]
 - [Concorda][]
-- [Vidi-dashboard][]
+- [Vidi-Dashboard][]
 
 If you have git available at the command line you can clone each repo using commands in the form,
 ```
@@ -85,8 +85,8 @@ While we are working on cleaning these repos up we have had set up some temporar
 - Nodezoo-github `live`
 - Nodezoo-npm `live`
 - Concorda `master`
-- Vidi-dashboard `master`
-- Vidi-concorda-nodezoo-system `master`
+- vidi-dashboard `master`
+- vidi-concorda-nodezoo-system `master`
 
 ## Install your dependencies
 In each repository's folder run the following command:
@@ -120,6 +120,6 @@ ___Note:___ You can run infrastructure and services separately using `infrastruc
 [Nodezoo github]: https://github.com/rjrodger/nodezoo-github
 [Nodezoo npm]: https://github.com/rjrodger/nodezoo-npm
 [Concorda]: https://github.com/nearform/concorda
-[Vidi-dashboard]: https://github.com/nearform/vidi-dashboard
+[Vidi-Dashboard]: https://github.com/nearform/vidi-dashboard
 
 [docker]: ./
