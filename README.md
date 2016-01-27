@@ -60,7 +60,7 @@ The links for each required repo are listed below,
 - [Nodezoo github][]
 - [Nodezoo npm][]
 - [Concorda][]
-- [Vidi][]
+- [Vidi-Dashboard][]
 
 If you have git available at the command line you can clone each repo using commands in the form,
 ```
@@ -78,14 +78,15 @@ git clone https://github.com/nearform/concorda
 ### Set your branches
 While we are working on cleaning these repos up we have had set up some temporary branches for certain repos, before you start please ensure each repo is on the correct branch listed below. As soon as our improvements are in place we will move back to all repos working via the `live` branch as this is where the production version of the system will live going forward.
 
-- Nodezoo - `live`
-- Nodezoo web `to-redux`
-- Nodezoo info - `live`
-- Nodezoo search - `live`
-- Nodezoo github - `live`
-- Nodezoo npm - `live`
-- Concorda - `master`
-- Vidi - `master`
+- Nodezoo  `live`
+- Nodezoo-web `to-redux`
+- Nodezoo-info `live`
+- Nodezoo-search `live`
+- Nodezoo-github `live`
+- Nodezoo-npm `live`
+- Concorda `master`
+- vidi-dashboard `master`
+- vidi-concorda-nodezoo-system `master`
 
 ## Install your dependencies
 In each repository's folder run the following command:
@@ -119,6 +120,6 @@ ___Note:___ You can run infrastructure and services separately using `infrastruc
 [Nodezoo github]: https://github.com/rjrodger/nodezoo-github
 [Nodezoo npm]: https://github.com/rjrodger/nodezoo-npm
 [Concorda]: https://github.com/nearform/concorda
-[Vidi]: https://github.com/nearform/vidi-dashboard
+[Vidi-Dashboard]: https://github.com/nearform/vidi-dashboard
 
 [docker]: ./
