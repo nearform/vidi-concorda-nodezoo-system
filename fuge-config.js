@@ -16,11 +16,31 @@ module.exports = {
     '**/*.log'
   ],
   overrides: {
-   msgstats: {
-     run: 'node ./system/msgstats.js'
-   },
-   mesh: {
-     run: 'node ./system/base-node.js'
-   }
- }
+    msgstats: {
+      build: 'cd system && npm install',
+      run: 'node ./system/msgstats.js'
+    },
+    mesh: {
+      build: 'cd system && npm install',
+      run: 'node ./system/base-node.js'
+    },
+    github: {
+      build: 'npm install'
+    },
+    info: {
+      build: 'npm install'
+    },
+    search: {
+      build: 'npm install'
+    },
+    web: {
+      build: 'npm install && npm run build'
+    },
+    concorda: {
+      build: 'npm install && npm run build'
+    },
+    vidi: {
+      build: 'npm install && npm run build'
+    }
+  }
 };
